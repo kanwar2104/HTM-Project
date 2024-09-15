@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+    body {
+        font-family: 'Arial', sans-serif;
+        margin: 0;
+        padding: 0;
+        color: #333;
+        background-color: beige;
+    }
+ header {
+        display: flex;
+      justify-content: space-between;
+        align-items: center;
+     padding: 10px 20px;
+      background-color: #abd05c;
+      border-bottom: 1px solid #ddd;
+    }
+    .logo {
+        display: flex;
+        align-items: center;
+      gap: 10px;
+      height: 60px;
+        margin: 0;
+        padding: 0;
+    }
+    .logo h1 {
+        font-size: 28px;
+    }
+    .logo .highlight {
+        font-weight: bold;
+    }
+    nav ul {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    }
+    nav ul li {
+        margin-right: 20px;
+    }
+    nav ul li a {
+    text-decoration: none;
+    color: #333;
+     font-weight: 600;
+     padding: 0 14px;
+    }
+    .social-icons img {
+        width: 24px;
+        height: 24px;
+         margin-left: 15px;
+    }
+    .blog-intro {
+         text-align: center;
+        margin: 40px 20px;
+    }
+    .blog-intro h2 {
+        font-size: 32px;
+           margin-bottom: 10px;
+    }
+    .blog-intro p {
+     font-size: 18px;
+        color: #777;
+    }
+    .blog-search {
+        display: flex;
+        flex-direction: column;
+         justify-content: center;
+         align-items: center;
+         margin-bottom: 40px;
+    }
+    .blog-search input[type="text"] {
+        padding: 10px;
+        font-size: 16px;
+        border: 1px solid #ddd;
+         border-radius: 5px;
+         width: 90%;
+         max-width: 300px;
+         margin-bottom: 15px;
+    }
+    .blog-categories {
+        display: flex;
+        flex-wrap: wrap;
+         justify-content: center;
+         list-style-type: none;
+         padding: 0;
+         margin: 0;
+    }
+    .blog-categories li {
+        margin-right: 15px;
+        margin-bottom: 10px;
+    }
+    .blog-categories li a {
+        text-decoration: none;
+         color: #777;
+         font-weight: 500;
+    }
+    .blog-posts {
+        display: flex;
+        flex-direction: column;
+         justify-content: center;
+         padding: 0 20px;
+           margin-bottom: 50px;
+    }
+    .blog-posts .post img {
+        width: 100%;
+        max-width: 300px;
+            border-radius: 5px;
+    }
+    .logo img {
+        height: 50px;
+        width: 250px;
+        height: auto;
+    }
+    .nav {
+        margin-right: 460px;
+    }
+    .grid-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+          gap: 20px;
+          max-width: 1200px;
+          margin: 0 auto;
+            padding: 0 20px;
+    }
+    .grid-item {
+        background-color: #c6d7a2;
+          padding: 15px;
+        border: 1px solid #ddd;
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+          border-radius: 8px;
+          text-align: center;
+    }
+    .grid-item img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 8px;
+    }
+    .grid-item h3 {
+        font-size: 18px;
+        font-weight: 500;
+        margin-top: 15px;
+        color: #333;
+    }
+    .grid-item p {
+        font-size: 16px;
+        color: #555;
+    }
+    footer {
+        background-color: black;
+        color: #ecf0f1;
+        padding: 20px 0;
+        margin-top: 50px;
+    }
+    .footer-container {
+        display: flex;
+           flex-direction: column;
+           justify-content: space-between;
+           align-items: center;
+           max-width: 1200px;
+         margin: 0 auto;
+         padding: 20px;
+    }
+    .footer-left h3 {
+        font-size: 24px;
+         font-weight: bold;
+        margin-bottom: 10px;
+    }
+    .footer-left p {
+        font-size: 14px;
+        line-height: 1.6;
+        text-align: center;
+    }
+    .footer-middle h4,
+    .footer-right h4 {
+        font-size: 18px;
+          margin-bottom: 10px;
+        text-align: center;
+    }
+    .footer-middle ul {
+        list-style: none;
+        padding: 0;
+        text-align: center;
+    }
+    .footer-middle ul li {
+        margin-bottom: 5px;
+    }
+    .footer-middle ul li a {
+        color: #ecf0f1;
+        text-decoration: none;
+        transition: color 0.3s;
+    }
+    .footer-middle ul li a:hover {
+        color: #a3e635;
+    }
+    .social-icons {
+        display: flex;
+        gap: 15px;
+        justify-content: center;
+    }
+    .social-icons a img {
+        width: 24px;
+        height: auto;
+        transition: transform 0.3s ease;
+    }
+    .social-icons a img:hover {
+        transform: scale(1.2);
+    }
+    .footer-bottom {
+        text-align: center;
+        padding: 10px 0;
+        border-top: 1px solid #7f8c8d;
+        margin-top: 20px;
+    }
+    .footer-bottom p {
+        margin: 0;
+        font-size: 14px;
+    }
+    @media (max-width: 768px) {
+        header {
+            flex-direction: column;
+            text-align: center;
+        }
+     .logo img {
+        width: 150px;
+        height: auto;
+            /* height: 90px; */
+        }
+        nav ul {
+            flex-direction: column;
+            align-items: center;
+        }
+      nav ul li {
+            margin-right: 0;
+            margin-bottom: 10px;
+        }
+ .nav {
+            margin-left: 0;
+        }
+      .blog-intro h2 {
+            font-size: 28px;
+        }
+  .blog-search input[type="text"] {
+            width: 80%;
+        }
+ .blog-search {
+            margin-bottom: 20px;
+        }
+ .grid-container {
+            padding: 0 10px;
+       }
+    }
+    @media (max-width: 480px) {
+        .blog-intro h2 {
+            font-size: 24px;
+        }
+        .grid-container {
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+        .footer-container {
+            padding: 15px;
+        }
+        .footer-left h3,.footer-middle h4, .footer-right h4 {
+            font-size: 16px;
+        }
+    }
+    .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .grid-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .footer-container .social-icons img {
+            width: 30px;
+            height: 30px;
+        }
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .grid-item {
+            margin-bottom: 20px;
+        }
+
+        .grid-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+</style>
+<body id="bbb" style="font-family: Georgia, 'Times New Roman', Times, serif;">
+    <header>
+        <div class="logo">
+            <img src="images/greenlogo.png" alt="Logo">
+        </div>
+        <nav class="nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="hemp.html">Hemp</a></li>
+                <li><a href="blog.html">Blog</a></li>
+            </ul>
+          </nav>
+</header>
+    <section class="blog-intro">
+        <h2>The EcoRoots Blog</h2>
+        <p style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">Discover a treasure of articles about the effects of deforestation and how we are fixing it.</p>
+    </section>
+    <section class="blog-search">
+            <input type="text" id="searchInput" placeholder="Search articles" onkeyup="searchArticles()">
+        <ul class="blog-categories" style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
+               <li><a href="#">Climate Change</a></li>
+            <li><a href="#">Loss Of Biodiversity</a></li>
+             <li><a href="#">Health Risks</a></li>
+            <li><a href="#">Pollution Increase</a></li>
+        </ul>
+ </section>
+    <div class="grid-container" id="articleGrid">
+        <div class="grid-item">
+            <a href="https://www.unpri.org/sustainability-issues/climate-change/climate-change-blog" target="_blank"><img src="https://media.istockphoto.com/id/1569184497/photo/super-typhoon-tropical-storm-cyclone-hurricane-tornado-over-ocean-weather-background-typhoon.webp?a=1&b=1&s=612x612&w=0&k=20&c=I34p2WotwQV2TXNCoUPhTTFJg-OI1_lLj3KaVu3rbXQ=" alt="Climate Change Image"></a>
+            <h3>Climate Change</h3>
+            <p>Areas with drought-like situations due to lack of vegetation.</p>
+        </div>
+        <div class="grid-item">
+            <a href="https://news.nationalgeographic.org/the-global-impacts-of-habitat-destruction/" target="_blank"><img src="https://imgs.search.brave.com/TNEAfuD185NGJ1xdWNWbcjyByPf7SdvdUCHP9mpGOuk/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvMTA2/MjMwNTQ0OC9waG90/by9odXJyaWNhbmUt/c2Vhc29uLmpwZz9z/PTYxMng2MTImdz0w/Jms9MjAmYz1tdkNv/NDFoRXI3Z0g1NWhK/YzhZSHYzU1JuWkpi/WnJzZzMxSmhubldT/XzgwPQ" alt="Climate Change Image"></a>
+            <h3>Habitat Loss</h3>
+            <p>Animals lost their habitat due to urbanization.</p>
+        </div>
+        <div class="grid-item">
+            <a href="https://www.health.harvard.edu/blog/air-pollution-how-to-reduce-harm-to-your-health-202108132567" target="_blank"><img src="https://imgs.search.brave.com/oW3wRFITuI1TOmfkvKj3Q5JfkNwhgOzm7frF52ieDQ4/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/cHJlbWl1bS1waG90/by9kZW5zZS1zbW9n/LWVudmVsb3BzLXBv/bGx1dGVkLWNpdHlz/Y2FwZS1kb21pbmF0/ZWQtYnktdG93ZXJp/bmctc21va2VzdGFj/a3NfOTc1MTg4LTQx/ODA0OS5qcGc_c2l6/ZT02MjYmZXh0PWpw/Zw" alt="Climate Change Image"></a>
+            <h3>Polluted Air</h3>
+            <p> Widespread clearing of forests for agriculture, urbanization, and logging has led to habitat destruction, soil erosion, and loss of biodiversity.</p>
+        </div>
+        <div class="grid-item">
+            <a href="https://www.nationalgeographic.com/environment/article/deforestation" target="_blank"><img src="https://imgs.search.brave.com/8p2SCa1cyX6MXZ5kWIIaDlKAf8yiTUtSA5TNCxE8Enk/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvMTE1/OTY5NTI1L3Bob3Rv/L2RlZm9yZXN0YXRp/b24uanBnP3M9NjEy/eDYxMiZ3PTAmaz0y/MCZjPTFoWkxxRWJv/cUZ5VmdGRHp2eVF5/SFlkRm5SREExNjFo/MEtvUFpZWG9MV289" alt="Climate Change Image"></a>
+            <h3>Deforestation</h3>
+            <p>Decreasing trees and more pollution make the planet less livable.</p>
+        </div>
+        <div class="grid-item">
+            <a href="https://www.iaea.org/newscenter/news/what-is-soil-erosion-how-can-nuclear-techniques-help-to-identify-and-mitigate-it" target="_blank"><img src="https://imgs.search.brave.com/oAkVBwbGt0Uhe-PN1Fajv2AxTkheoarpQIWrywnHOeM/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvOTU4/MDkwMjEvcGhvdG8v/c29pbC1lcm9zaW9u/LmpwZz9zPTYxMng2/MTImdz0wJms9MjAm/Yz14Z29TcWZRS3lI/UVoxNzR4SnZ4b1JX/ZGk3LTlsYWJUWWdx/OW5Od3E0V1JvPQ" alt="Climate Change Image"></a>
+            <h3>Soil Erosion</h3>
+            <p> Intensive agriculture and deforestation have degraded soil quality, reducing its fertility and increasing the risk of landslides and sedimentation in waterways.</p>
+        </div>
+        <div class="grid-item">
+            <a href="https://blog.ucsusa.org/pablo-ortiz/the-world-is-in-a-water-crisis-and-climate-change-is-making-it-worse/" target="_blank"><img src="https://imgs.search.brave.com/EDTdguR6UZkV5WUsB_sp5P6MFWGEYtRuRSOut6hZK7U/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvODk0/OTQ1MDAvcGhvdG8v/d2F0ZXJob2xlcy1v/bi1wbGF0ZWF1LXdp/dGgtYmx1ZS1za3kt/YW5kLWNsb3Vkcy5q/cGc_cz02MTJ4NjEy/Jnc9MCZrPTIwJmM9/eXlJLXg4SU9nTUgx/cGdhNFJ1NjRBVTVS/N3ByeXJLaHhNWUhU/bzhIekFBVT0" alt="Climate Change Image"></a>
+            <h3>Water Scarcity</h3>
+            <p> Human activities such as over-extraction of groundwater and pollution have compromised water quality and availability, affecting human consumption, agriculture, and ecosystems.</p>
+        </div>
+    </div>
+    <div>
+        <center><h1 style="margin:100px">How We Have Helped</h1></center>
+        <div class="grid-container">
+            <div class="grid-item">
+                <img src="https://media.istockphoto.com/id/1202013320/photo/planting-tree-in-garden-concept-save-world-green-earth.jpg?s=612x612&w=0&k=20&c=qIhZQ1nO1QYD_Tnp0GNeucPM2gZ9biFvXOh_kV-B3fY=" alt="Planting Trees Image">
+                <h3>Shop with an Impact</h3>
+                <p>Invest in future not only for yourself but also for the coming generation.</p>
+            </div>
+            <div class="grid-item">
+                <img src="https://media.istockphoto.com/id/1130655067/photo/volunteers-planting-a-tree.jpg?s=612x612&w=0&k=20&c=LN2OT16Fg46ghQ3xjGh8-95awNIpLkoHXJ8ADRIVLnU=" alt="Planting for Users Image">
+                <h3>Planting for User</h3>
+                <p>Planting for our users who have enough EcoCoins to get one planted.</p>
+            </div>
+            <div class="grid-item">
+                <img src="https://images.unsplash.com/photo-1498671546682-94a232c26d17?q=80&w=1949&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Hemp Products Image">
+                <h3>Hemp Products</h3>
+                <p>Using our hemp products instead of plastic will also decrease waste in nature.</p>
+            </div>
+        </div>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-left">
+          <h3>Eco<span>Roots</span></h3>
+                    <p>Your trusted source for sustainable living tips, environmental news, and eco-friendly products.</p>
+            </div>
+            <div class="footer-middle">
+                <h4>Quick Links</h4>
+                <ul>
+                     <li><a href="#">Home</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Shop</a></li>
+                </ul>
+            </div>
+            <div class="footer-right">
+                <h4>Follow Us</h4>
+                <div class="social-icons">
+                    <a href="#" aria-label="Facebook"><img src="images/facebook.png" alt="Facebook"></a>
+                    <a href="#" aria-label="Instagram"><img src="images/instagram.png" alt="Instagram"></a>
+                    <a href="#" aria-label="Twitter"><img src="images/linkedin.png" alt="Twitter"></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 EcoRoots. All rights reserved.</p>
+        </div>
+    </footer>
+    <script>
+        function searchArticles() {
+            const input = document.getElementById('searchInput').value.toLowerCase();
+            const gridItems = document.getElementsByClassName('grid-item');
+            for (let i = 0; i < gridItems.length; i++) {
+                const title = gridItems[i].getElementsByTagName('h3')[0].innerText.toLowerCase();
+                const description = gridItems[i].getElementsByTagName('p')[0].innerText.toLowerCase();
+ 
+               if (title.includes(input) || description.includes(input)) {
+                    gridItems[i].style.display = '';
+                } else {
+                    gridItems[i].style.display = 'none';
+                }
+            }
+        }
+    </script>
+</body>
+</html>

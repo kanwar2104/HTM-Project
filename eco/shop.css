@@ -1,0 +1,264 @@
+/* Base styles for all devices */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #e2f0e4; /* Light, soothing green */
+    margin: 0;
+    padding: 0;
+    color: #2e7d32; /* Dark green for text */
+}
+
+header {
+    background-color: #2e7d32; /* Dark green for the header */
+    color: #f0f4f1; /* Off-white text color */
+    padding: 20px;
+    text-align: center;
+}
+
+.banner {
+    position: relative;
+    width: 100%;
+    height: 300px; /* Adjust the height as needed */
+    overflow: hidden;
+}
+
+.banner-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    background-color: rgba(46, 125, 50, 0.7); /* Semi-transparent background */
+    color: #f0f4f1; /* Off-white text color */
+    padding: 20px;
+    border-radius: 8px;
+    overflow: hidden; /* Ensure the text stays within the bounds */
+    white-space: nowrap; /* Prevent text from wrapping */
+}
+
+.banner-text h2 {
+    font-size: 32px;
+    margin: 0;
+    border-right: 4px solid #f0f4f1; /* Cursor effect */
+    width: 0; /* Start with hidden text */
+    white-space: nowrap; /* Prevent text from wrapping */
+    overflow: hidden; /* Hide overflowing text */
+    animation: typing 2s steps(32, end) forwards, blink-caret 0ms step-end infinite;
+}
+
+/* Typing effect */
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+/* Blinking cursor effect */
+@keyframes blink-caret {
+    from, to {
+        border-color: transparent;
+    }
+    50% {
+        border-color: #f0f4f1;
+    }
+}
+
+.dashboard {
+    background-color: #f0f4f1; /* Off-white background */
+    color: #2e7d32; /* Dark green text */
+    padding: 10px;
+    margin: 20px 0;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
+}
+
+.container {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    padding: 20px;
+    gap: 20px; /* Space between cards */
+}
+
+/* Base card styles */
+.card {
+    background-color: #f0f4f1; /* Off-white card background */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    width: 300px; /* Fixed width for uniformity */
+    min-height: 150px; /* Minimum height for consistency */
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    transform: translateX(-100%); /* Start off-screen */
+    opacity: 0; /* Start invisible */
+}
+
+
+/* Individual card animations with delays */
+.card:nth-child(1) {
+    animation: swipeIn 0.5s ease-out forwards;
+    animation-delay: 0s;
+}
+
+.card:nth-child(2) {
+    animation: swipeIn 0.5s ease-out forwards;
+    animation-delay: 0.2s;
+}
+
+.card:nth-child(3) {
+    animation: swipeIn 0.5s ease-out forwards;
+    animation-delay: 0.4s;
+}
+
+.card:nth-child(4) {
+    animation: swipeIn 0.5s ease-out forwards;
+    animation-delay: 0.6s;
+}
+
+.card:nth-child(5) {
+    animation: swipeIn 0.5s ease-out forwards;
+    animation-delay: 0.8s;
+}
+
+.card:nth-child(6) {
+    animation: swipeIn 0.5s ease-out forwards;
+    animation-delay: 1s;
+}
+
+.card:nth-child(7) {
+    animation: swipeIn 0.5s ease-out forwards;
+    animation-delay: 1.2s;
+}
+
+.card:nth-child(8) {
+    animation: swipeIn 0.5s ease-out forwards;
+    animation-delay: 1.4s;
+}
+
+.card:nth-child(9) {
+    animation: swipeIn 0.5s ease-out forwards;
+    animation-delay: 1.6s;
+}
+
+.card:nth-child(10) {
+    animation: swipeIn 0.5s ease-out forwards;
+    animation-delay: 1.8s;
+}
+
+/* Swipe-in animation */
+@keyframes swipeIn {
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Swipe-out animation on hover */
+.card:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Slightly stronger shadow on hover */
+}
+
+@keyframes swipeOut {
+    to {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+}
+
+.card img {
+    width: 100px;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+.card h2 {
+    margin: 10px 0;
+    font-size: 24px;
+    color: #2e7d32; /* Dark green for card titles */
+}
+
+footer {
+    background-color: #2e7d32; /* Dark green background */
+    color: #f0f4f1; /* Off-white text color */
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    width: 100%;
+    bottom: 0;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-links, .footer-socials {
+    margin: 10px 0;
+}
+
+.footer-links a, .footer-socials a {
+    color: #f0f4f1;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.footer-links a:hover, .footer-socials a:hover {
+    text-decoration: underline;
+}
+
+
+/* Media Queries for Responsive Design */
+
+/* Adjust header and banner for small screens */
+@media (max-width: 768px) {
+    .banner {
+        height: 200px; /* Reduced height for smaller screens */
+    }
+
+    .banner-text h2 {
+        font-size: 24px; /* Smaller text size for smaller screens */
+    }
+}
+
+/* Adjust container and cards for small screens */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px; /* Reduced gap between cards */
+    }
+
+    .card {
+        width: 90%; /* Full width on small screens */
+        max-width: 400px; /* Maximum width to avoid overly large cards */
+    }
+}
+
+/* Adjust header and navigation for mobile */
+@media (max-width: 480px) {
+    header {
+        padding: 15px;
+    }
+
+    .banner-text {
+        padding: 10px;
+    }
+
+    .banner-text h2 {
+        font-size: 20px; /* Smaller text size for mobile screens */
+    }
+
+    .card {
+        width: 100%;
+        max-width: 350px; /* Further reduced maximum width for mobile screens */
+    }
+
+    footer {
+        padding: 15px;
+    }
+}

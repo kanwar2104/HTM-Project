@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            color: #333;
+            line-height: 1.6;
+            background-color: beige;
+            margin: 0;
+            padding: 0;
+        }
+        body, h1, h2, p, ul, li, a {
+            margin: 0;
+            padding: 0;
+              list-style: none;
+              text-decoration: none;
+        }
+        header {
+            position: relative;
+        }
+        nav {
+            display: flex;
+             justify-content: space-between;
+            align-items: center;
+              padding: 10px 20px;
+              background-color: black;
+              color: white;
+              border-bottom: 1px solid #ddd;
+               margin-bottom: 20px;
+        }
+     .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+        .nav-links a {
+            color: #ffffff;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover {
+            color: #009688;
+               text-decoration: underline;
+              transition: 0.5s ease;
+        }
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+              padding: 2rem;
+              border-radius: 8px;
+              box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+              margin-top: 30px;
+        }
+        .contact-form h1,
+        .contact-form h2 {
+            color: #2a7f62;
+        }
+        .contact-form h2 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-form h1 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+     .contact-form p {
+            color: #555;
+            margin-bottom: 1.5rem;
+             font-size: 1rem;
+        }
+
+        .contact-form form {
+            display: grid;
+             gap: 1rem;
+        }
+
+        .contact-form label {
+            display: block;
+            font-weight: bold;
+            color: #333;
+        }
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            border-color: #2a7f62;
+            outline: none;
+            box-shadow: 0 0 5px rgba(42, 127, 98, 0.3);
+        }
+        .contact-form button {
+            background-color: #2a7f62;
+         color: #fff;
+         border: none;
+         padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+   border-radius: 4px;
+     cursor: pointer;
+        }
+
+        .contact-form button:hover {
+            background-color: #1d6a50;
+        }
+        .contact-form button:focus {
+            outline: 2px solid #1d6a50;
+        }
+        nav ul {
+            display: flex;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+        nav ul li {
+            margin-right: 28px;
+  }
+     nav ul li a {
+            text-decoration: none;
+         color: #ffffff;
+            font-weight: 600;
+            padding: 0 14px;
+     }
+        .nav img {
+            height: 80px;
+        }
+        .parent {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+        }
+        .photo img {
+         max-width: 100%;
+            height: 750px;
+            margin-top: 25px;
+            border-radius: 10px;
+        }
+            .sec {
+            max-width: 100%;
+            padding: 0 20px;
+        }
+     footer {
+            background-color: black;
+            color: white;
+           padding: 20px;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+      footer .social-links {
+             margin-bottom: 20px;
+        }
+
+        footer .social-links a {
+               color: white;
+              margin: 0 10px;
+                font-size: 1.2rem;
+            transition: color 0.3s ease;
+        }
+
+        footer .social-links a:hover {
+            color: #009688;
+        }
+footer .footer-links {
+            margin-bottom: 20px;
+        }
+
+        footer .footer-links a {
+            color: white;
+            margin: 0 15px;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+ footer .footer-links a:hover {
+            color: #009688;
+        }
+        footer .copyright {
+              font-size: 0.875rem;
+        }
+        .footer-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+              align-items: flex-start;
+            max-width: 1200px;
+            margin: 0 auto;
+              padding: 20px;
+        }
+        .footer-left h3 {
+            font-size: 24px;
+            font-weight: bold;
+               margin-bottom: 10px;
+         }
+          .footer-left p {
+            font-size: 14px;
+              line-height: 1.6;
+        }
+        .footer-middle h4,
+        .footer-right h4 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        .footer-middle ul {
+            list-style: none;
+            padding: 0;
+        }
+        .footer-middle ul li {
+            margin-bottom: 5px;
+        }
+        .footer-middle ul li a {
+            color: #ecf0f1;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .footer-middle ul li a:hover {
+            color: #a3e635;
+        }
+        .social-icons {
+            display: flex;
+            gap: 15px;
+        }
+        .social-icons a img {
+            width: 24px;
+            height: auto;
+            transition: transform 0.3s ease;
+        }
+        .social-icons a img:hover {
+            transform: scale(1.2);
+        }
+        .footer-bottom {
+            text-align: center;
+            padding: 10px 0;
+            border-top: 1px solid #7f8c8d;
+            margin-top: 20px;
+        }
+        .footer-bottom p {
+            margin: 0;
+            font-size: 14px;
+        }
+        #bbb {
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            nav ul li {
+                margin: 10px 0;
+            }
+            nav {
+                flex-direction: column;
+            }
+            .contact-form {
+                padding: 1rem;
+            }
+            .parent {
+                flex-direction: column;
+                align-items: center;
+            }
+            .footer-container {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            .footer-left,
+            .footer-middle,
+            .footer-right {
+                margin-bottom: 20px;
+            }
+        }
+        @media (max-width: 480px) {
+            .contact-form h1 {
+                font-size: 1.5rem;
+            }
+            .contact-form h2 {
+                font-size: 1.25rem;
+            }
+            .contact-form input, .contact-form textarea {
+                font-size: 0.875rem;
+            }
+            .contact-form button {
+                font-size: 0.875rem;
+                padding: 0.5rem 1rem;
+            }
+         .nav img {
+                height: 60px;
+            }
+        }
+    </style>
+</head>
+<body id="bbb">
+    <header>
+        <nav class="nav">
+            <img src="images/whitelogo.png" height="200px" width="200px">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Dashboard</a></li>
+                <li><a href="#">Shop</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">Blog</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="parent">
+        <div class="photo">
+          <img src="images/people-planting-tree-countryside.jpg">
+ </div>
+        <div class="sec">
+            <section class="contact-form">
+                <h2>SO, ARE YOU READY TO TAKE ON A SERIOUSLY AWESOME JOURNEY WITH US?</h2>
+                <h1>GET IN TOUCH</h1>
+                <p>WANT TO SAY HELLO?</p>
+                <form action="submit.php" method="post">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                  <label for="phone">Phone no.:</label>
+                    <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+                   <label for="email">Email Address:</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+                    <label for="message">Message:</label>
+                   <textarea id="message" name="message" placeholder="Enter your message here" required></textarea>
+                    <button type="submit">Submit</button>
+                </form>
+            </section>
+        </div>
+    </div>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-left">
+                <h3>Eco<span>Roots</span></h3>
+                <p>Your trusted source for sustainable living tips, environmental news, and eco-friendly products.</p>
+            </div>
+            <div class="footer-middle">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Shop</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-right">
+                <h4>Follow Us</h4>
+                <div class="social-icons">
+                    <a href="#" aria-label="Facebook"><img src="images/facebook.png" alt="Facebook"></a>
+                    <a href="#" aria-label="Instagram"><img src="images/instagram.png" alt="Instagram"></a>
+                    <a href="#" aria-label="Twitter"><img src="images/linkedin.png" alt="Twitter"></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 EcoRoots. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,421 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: transparent;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+/* Hero section */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.hero-content {
+    position: relative;
+    text-align: center;
+    color: #fff;
+    margin-top: 60px; /* Adjust to create space between navbar and hero content */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: center;
+        background-color: rgba(0, 0, 0, 0.5); /* Optional: Add background to make nav visible */
+        padding: 20px;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 10px;
+    }
+
+
+    .nav-links a {
+        color: #fff; 
+
+    }
+
+    .hero-content {
+        margin-top: 150px; 
+    }
+
+    .hero-content h2 {
+        font-size: 1.5rem;
+    }
+    .cta-button {
+        font-size: 0.875rem;
+        justify-content: center;
+        margin:10px;
+    }
+}
+
+.hero h2 {
+    font-size: 2.5em;
+    margin-bottom: 0.5em;
+}
+
+.hero p {
+    font-size: 1.2em;
+    margin-bottom: 1em;
+}
+
+.cta-button {
+    display: inline-block;
+    background: #FFD700; 
+    color: #333;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+/* Main Content */
+main {
+    padding: 20px;
+    background: linear-gradient(to bottom, #6b8e23, #faf3e0,#79b4c9);
+}
+
+/* What We Do Section */
+.what-we-do {
+    padding: 60px 20px;
+    text-align: center;
+    color: #333;
+    margin: 150px;
+}
+
+.what-we-do h2 {
+    font-size: 5rem;
+    margin-bottom: 20px;
+}
+
+.what-we-do p {
+    font-size: 1.5em;
+    line-height: 1.6;
+    max-width: 700px;
+    margin: 0 auto;
+    color: #333;
+}
+
+.what-we-do .underline_text {
+    font-size: 40px;
+    color: white;
+    text-transform: uppercase;
+    font-family: Poppins, sans-serif;
+}
+
+.swipe-in {
+    opacity: 0;
+    transform: translateX(-100%); 
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.what-we-do.visible .swipe-in {
+    opacity: 1;
+    transform: translateX(0); 
+}
+
+@media (max-width: 768px) {
+    .what-we-do h2{
+        font-size:3rem;
+    }
+    .what-we-do p{
+        font-size: 1.5rem;
+    }
+    .what-we-do .underline_text{
+        font-size:30px;
+    }
+}
+
+
+/*why ecoroots*/
+.why-ecoroots {
+    text-align: center;
+    padding: 20px;
+    margin:100px;
+}
+
+.why-ecoroots h2 {
+    font-size: 4rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.why-ecoroots .card {
+    display: inline-block;
+    width: 300px;
+    height: 250px;
+    margin: 20px;
+    padding: 20px;
+}
+
+.why-ecoroots .card img{
+    height:100%;
+    width:auto;
+}
+
+.why-ecoroots .card h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.why-ecoroots .card p {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+/*hemp products*/
+.high-quality-hemp {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 60px 20px;
+    background-color:#b0b792;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+    color: #333;
+    text-align: left;
+}
+
+.high-quality-hemp.visible {
+    opacity: 1;
+    transform: translateY(0);
+    border-radius: 10px;
+}
+
+.high-quality-hemp .content {
+    width: 50%;
+}
+
+.high-quality-hemp h2 {
+    font-size: 60px;
+    color: #1d6a50; 
+    margin-bottom: 20px;
+}
+
+.high-quality-hemp p {
+    font-size: 20px;
+    color: #333;
+    line-height: 2;
+    margin-bottom: 20px;
+}
+
+.high-quality-hemp .images {
+    width: 40%; 
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; 
+    gap: 10px;
+}
+
+.high-quality-hemp .images img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    margin: 10px 0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.high-quality-hemp .images img:hover {
+    transform: scale(1.05);
+}
+
+.button-container {
+    margin-top: 20px;
+}
+
+.button-container .cta-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #000;
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.button-container .cta-button:hover {
+    background-color: #333;
+    transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+    .high-quality-hemp {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .high-quality-hemp .content, .high-quality-hemp .images {
+        width: 100%;
+        text-align: center;
+    }
+
+    .high-quality-hemp .images {
+        align-items: center;
+    }
+}
+
+/* Team */
+.our-team {
+    text-align: center;
+    padding: 2rem;
+  }
+  
+  .our-team h1 {
+    font-size: 2.5rem;
+    color: #333;
+    margin:50px;
+    margin-top: 8rem;
+  }
+  
+  .team-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+  }
+  
+  .team-member {
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    max-width: 250px;
+    margin: 0 auto;
+    position: relative;
+  }
+  
+  .team-member img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
+  }
+  
+  .team-member:hover img {
+    transform: scale(1.1);
+  }
+  
+  .member-info {
+    padding: 1rem;
+  }
+  
+  .member-info h3 {
+    font-size: 1.25rem;
+    color: #2a7f62;
+    margin: 0;
+  }
+
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .team-container {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .team-member {
+      max-width: 100%;
+    }
+  
+    .our-team h1 {
+      font-size: 2rem;
+    }
+  }
+
+  /*regenrative*/
+  .regenerate {
+    margin-top:-150px;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .regenerate img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+  
+  .overlay h1 {
+    color: #fff;
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 20px; 
+    z-index: 1;
+  }
+  
+  .overlay h1 span {
+    color:#fff;
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 20px; 
+    z-index: 1;
+    text-decoration: underline #a3e635;
+  }
+  
+  
+  .overlay p{
+    color: #fff;
+    font-size: 16px;
+    text-align: center;
+    margin-bottom: 20px; 
+    z-index: 1;
+  }
+  
+  .overlay .cta-button {
+    background-color: #009688;
+    border: none;
+    color: white;
+    margin: 20px; 
+  }
+  
+  .overlay .cta-button:hover{
+    background-color: #86c918;
+  }
+  @media (max-width: 768px) {
+    .overlay h1 {
+      font-size: 28px; 
+    }
+  }
